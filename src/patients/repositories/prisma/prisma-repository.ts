@@ -25,6 +25,7 @@ export class PrismaPatientsRepository implements PatientRepository {
 
   async findAll(): Promise<Patient[]> {
     const patients = await this.dbService.patient.findMany();
+
     return patients.map((patient) => PatientsMapper.toDomain(patient));
   }
 }
