@@ -1,3 +1,4 @@
+import { IsEmail, IsString } from 'class-validator';
 export class CreatePatientDto {
   @IsString()
   fullName: string;
@@ -9,5 +10,5 @@ export class CreatePatientDto {
   phoneNumber: string;
 
   @IsString()
-  documentBase64: string; // contenido base64 del documento
+  documentUrl: string;
 }

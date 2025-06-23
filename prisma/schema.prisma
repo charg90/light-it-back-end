@@ -15,10 +15,10 @@ datasource db {
 }
 model Patient {
   id          String   @id @default(uuid())
-  fullName    String
+  full_name    String
   email       String   @unique
-  phoneNumber String
+  phone_number String
   // For showcase purpose I m using base64 encoded string ideally it should be a file path or URL
-  documentUrl String   
-  createdAt   DateTime @default(now())
+  document_url String   
+  created_at   DateTime @default(now())
 }
