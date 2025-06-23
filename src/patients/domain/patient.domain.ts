@@ -5,6 +5,7 @@ interface IPatientsProps {
   email: string;
   phoneNumber: string;
   documentUrl: string;
+  deletedAt?: Date | null;
 }
 
 export class Patient extends Entity<IPatientsProps> {
@@ -31,6 +32,15 @@ export class Patient extends Entity<IPatientsProps> {
   }
   get documentUrl(): string {
     return this.props.documentUrl;
+  }
+  set documentUrl(value: string) {
+    this.props.documentUrl = value;
+  }
+  get deletedAt(): Date | null | undefined {
+    return this.props.deletedAt;
+  }
+  set deletedAt(value: Date | null | undefined) {
+    this.props.deletedAt = value;
   }
   static create(props: IPatientsProps, id?: string): Patient {
     return new Patient(props, id);

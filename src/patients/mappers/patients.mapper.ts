@@ -9,6 +9,7 @@ export class PatientsMapper {
         email: raw.email,
         phoneNumber: raw.phone_number,
         documentUrl: raw.document_url,
+        deletedAt: raw.deleted_at ? new Date(raw.deleted_at) : null,
       },
       raw.id,
     );
@@ -31,6 +32,7 @@ export class PatientsMapper {
       email: patient.email,
       phoneNumber: patient.phoneNumber,
       documentUrl: patient.documentUrl,
+      deletedAt: patient.deletedAt,
     };
   }
 }
