@@ -4,9 +4,10 @@ import { PatientsController } from './patients.controller';
 import { PatientRepository } from './repositories/patient.repository';
 import { PrismaPatientsRepository } from './repositories/prisma/prisma-repository';
 import { DbModule } from 'src/db/db.module';
+import { MailModule } from 'src/mail/mail.module';
 
 @Module({
-  imports: [DbModule],
+  imports: [DbModule, MailModule],
   controllers: [PatientsController],
   providers: [
     PatientsService,
