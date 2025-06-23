@@ -21,4 +21,5 @@ model Patient {
   // For showcase purpose I m using base64 encoded string ideally it should be a file path or URL
   document_url String   
   created_at   DateTime @default(now())
+  
 }
