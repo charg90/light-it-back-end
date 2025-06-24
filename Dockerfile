@@ -23,5 +23,5 @@ RUN pnpm install --prod --frozen-lockfile
 COPY --from=build /usr/src/app/dist ./dist
 COPY --from=build /usr/src/app/prisma ./prisma
 COPY --from=build /usr/src/app/generated ./generated
-EXPOSE 3000
+EXPOSE 4000
 CMD ["sh", "-c", "pnpm prisma migrate deploy && node dist/main"]
