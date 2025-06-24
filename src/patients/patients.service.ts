@@ -18,7 +18,7 @@ export class PatientsService {
   ) {}
   private readonly logger = new Logger(PatientsService.name);
 
-  async create(createPatientDto: CreatePatientDto) {
+  async create(createPatientDto: CreatePatientDto, documentBase64: string) {
     const patientExists = await this.patientRepository.findByEmail(
       createPatientDto.email,
     );
@@ -32,7 +32,10 @@ export class PatientsService {
       );
     }
 
-    const patient = Patient.create(createPatientDto);
+    const patient = Patient.create({
+      ...createPatientDto,
+      documentUrl: documentBase64,
+    });
     try {
       await this.patientRepository.create(patient);
     } catch (error) {
