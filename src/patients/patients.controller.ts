@@ -40,6 +40,8 @@ export class PatientsController {
 
   @Get()
   async findAll() {
-    return await this.patientsService.findAll();
+    const patients = await this.patientsService.findAll();
+
+    return patients;
   }
 }
