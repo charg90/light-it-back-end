@@ -13,4 +13,13 @@ export class MailService {
       text: `Hello ${fullName}, welcome to Light IT Care!`,
     });
   }
+
+  async sendEmailNotification(to: string, subject: string, message: string) {
+    await this.mailerService.sendMail({
+      to,
+      subject,
+
+      text: message,
+    });
+  }
 }
